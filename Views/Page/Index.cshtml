@@ -1,52 +1,66 @@
-<style>
-    .parent{
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            text-align: center;
+            height: 100vh;
+            flex-direction: column; 
+            border: 1px solid black;
+        }
 
-    .card-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10vh; 
-    }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10vh; 
+        }
 
-    .card{
-        background-color: rgb(228, 205, 205)
-    }
-</style>
+        .card {
+            background-color: rgb(228, 205, 205);
+        }
 
-<div class="parent">
-    <h1 class ="sample" >Hello World</h1>
-</div>
+        .welcome-message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1 class="sample">Hello World</h1>
+        <div class="welcome-message"></div> 
+        <div class="card-container">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="card-container">
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-</div>
+    <script>
+        var parent = document.querySelector(".welcome-message");
+        var newElement = document.createElement("h3");
+        newElement.innerHTML = "Welcome To My Domain";
+        var brs = document.createElement("br");
 
-<script>
-    var parent = document.querySelector(".parent");
-    var newElement = document.createElement("h3");
-    var brs = document.createElement("br")
-    newElement.innerHTML = "Welcome To My Domain";
-    
-
-    function appendAfterDelay() {
-        setTimeout(function() {
-            parent.append(brs);                  
-            parent.append(newElement);      
-        }, 5000);   
-    }
-    appendAfterDelay();
-</script>
-
+        function appendAfterDelay() {
+            setTimeout(function() {
+                parent.appendChild(newElement); 
+                parent.appendChild(brs); 
+            }, 5000);
+        }
+        appendAfterDelay();
+    </script>
+</body>
+</html>
