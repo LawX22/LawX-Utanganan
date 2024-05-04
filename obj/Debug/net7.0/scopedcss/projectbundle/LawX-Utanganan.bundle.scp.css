@@ -40,10 +40,14 @@ button.accept-policy[b-uxr197s7uw] {
   line-height: inherit;
 }
 
-.footer[b-uxr197s7uw] {
+/* .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+} */
+
+.container[b-uxr197s7uw]{
+  width: 100% !important;
 }
